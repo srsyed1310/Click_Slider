@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+
+  <style>
+      *{
+        padding: 0;
+        margin: 0;
+        border: none;
+        list-style: none;
+        outline: none;
+      }
+      body{
+        background: linear-gradient(gray , blueviolet);
+        font-family: Arial, sans-serif;
+      }
+      .container{
+        width: 718px;
+        margin: 40px auto;
+        overflow: hidden;
+      }
+      h1{
+        color: white;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      ul.thumbs img{
+        border: #333 solid 4px;
+      }
+      ul.thumbs li a span{
+        display: none;
+      }
+      ul.thumbs a{
+        display: block;
+        position: relative;
+        width: 85px;
+        height: 55px;
+        border: 4px solid transparent;
+        font-size: 12px/25px Arial, sans-serif;
+        text-decoration: none;
+        color: #515151;
+        text-shadow: 1px 1px 0 rgba(255, 255, 255, .25), inset 1px 1px 0 rgba(0, 0, 0, 0.15);
+      }
+      ul.thumbs li{
+        float: left;
+        margin-bottom: 10px;
+        margin-right: 9px;
+      }
+      ul.slides {
+        overflow: hidden;
+        clear: both;
+        border: #333 solid 4px;
+      }
+
+      ul.slides,
+      ul.slides li,
+      ul.slides a,
+      ul.slides img{
+        width: 705px;
+        height: 350px;
+        position: relative;
+      }
+      ul.slides li{
+        z-index: 50;
+        position: absolute;
+      }
+      ul.thumbs li a:hover span{
+        position: absolute;
+        z-index: 101;
+        bottom: -30px;
+        left: -22px;
+        display: block;
+        width: 120px;
+        height: 25px;
+        text-align: center;
+        border-radius: 3px;
+        box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.4);
+        background-color: white;
+        background: linear-gradient(top, #fff 0%, #bcbcbc 100%);
+      }
+      ul.thumbs li a:hover span::before{
+        width: 0;
+        height: 0;
+        border-bottom: 5px solid white;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        content: " ";
+        position: absolute;
+        top: -5px;
+        left: 55px;
+      }
+      ul.thumbs li:first-child a:hover span{
+        left: -3px;
+      }
+      ul.slides li:target{
+        z-index: 100;
+        animation: slide 1s 1;
+      }
+      @keyframes slide {
+        0%{left: -500px;}
+        100%{
+          left: 0;
+        }
+      }
+
+      ul.slides li:not(:target){
+        animation: notarget 1s 1;
+      }
+      @keyframes notarget {
+        0%{z-index: 75;}
+        100%{z-index: 75;}
+      }
+
+
+  </style>
+
+
+</head>
+<body>
+  
+    <div class="container">
+      
+      <h1>CSS Slider</h1>
+      <ul class="thumbs">
+        <li><a href="#slide1"><img src="./click-Slider-images/img/thumb1.jpg" alt="">
+        <span>This is image 1</span></a></li>
+        <li><a href="#slide2"><img src="./click-Slider-images/img/thumb2.jpg" alt="">
+          <span>This is image 2</span></a></li>
+          <li><a href="#slide3"><img src="./click-Slider-images/img/thumb3.jpg" alt="">
+            <span>This is image 3</span></a></li>
+            <li><a href="#slide4"><img src="./click-Slider-images/img/thumb4.jpg" alt="">
+              <span>This is image 4</span></a></li>
+              <li><a href="#slide5"><img src="./click-Slider-images/img/thumb5.jpg" alt="">
+                <span>This is image 5</span></a></li>
+                <li><a href="#slide6"><img src="./click-Slider-images/img/thumb6.jpg" alt="">
+                  <span>This is image 6</span></a></li>
+                  <li><a href="#slide7"><img src="./click-Slider-images/img/thumb7.jpg" alt="">
+                    <span>This is image 7</span></a></li>
+      </ul>
+
+
+      <ul class="slides">
+        <li id="slide1" class="first"><img src="./click-Slider-images/img/slide1.jpg" alt=""></li>
+        <li id="slide2"><img src="./click-Slider-images/img/slide2.jpg" alt=""></li>
+        <li id="slide3"><img src="./click-Slider-images/img/slide3.jpg" alt=""></li>
+        <li id="slide4"><img src="./click-Slider-images/img/slide4.jpg" alt=""></li>
+        <li id="slide5"><img src="./click-Slider-images/img/slide5.jpg" alt=""></li>
+        <li id="slide6"><img src="./click-Slider-images/img/slide6.jpg" alt=""></li>
+        <li id="slide7"><img src="./click-Slider-images/img/slide7.jpg" alt=""></li>
+      </ul>
+    
+    
+    </div>
+
+
+
+</body>
+</html>
